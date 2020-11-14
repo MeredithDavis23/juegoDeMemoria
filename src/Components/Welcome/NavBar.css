@@ -1,0 +1,122 @@
+body {
+  /* background-color: lightgray; */
+  background-image: url(comicbackground.jpg);
+  /* background-repeat: no-repeat; */
+  background-size: ;
+}
+.navBar {
+  height: 70px;
+  width: auto;
+  background-color: rgb(29, 121, 121);
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 0px 20px;
+}
+.button {
+  position: absolute;
+  border: none;
+  height: 50px;
+  width: 50px;
+  top: 15px;
+  left: 20px;
+  margin: 0 auto;
+  background-color: rgb(29, 121, 121);
+}
+.button--middle {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: lightcoral;
+  margin: 0 auto;
+}
+
+.button--middle::before,
+.button--middle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: lightcoral;
+  transition: all 200ms ease-in-out;
+}
+
+.button--middle::before {
+  top: -10px;
+}
+
+.button--middle::after {
+  top: 10px;
+}
+
+/* .button--middle:hover:before {
+    box-shadow: 0 0 0 #fff;
+    transform: translateY(10px) rotate(45deg);
+  }
+  .button--middle:hover:after {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  .dropdown-content {
+    display: hidden;
+    top: 75px;
+  } */
+
+.dropdown-content li {
+  float: left;
+  width: auto;
+  text-decoration: none;
+  color: white;
+  padding: 12px 12px;
+  display: block;
+  border-radius: 0;
+  text-align: left;
+  transform: scale(1);
+  transition: transform ease-out 0.5s;
+}
+/* .dropdown-content :hover {
+    background-color: grey;
+    width: auto;
+  } */
+
+.dropdown-content {
+  display: block;
+  position: fixed;
+  width: 275px;
+  font-size: 20px;
+  background-color: rgb(29, 121, 121);
+  top: 78px;
+  left: 8px;
+  /* padding-bottom: 20px */
+}
+
+.dropdown-content li:hover {
+  transform: scale(1.2);
+}
+
+.dropdown-content,
+.ul {
+  animation: delaySlide 0.35s ease-in-out;
+}
+
+@keyframes delaySlide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+/* .ul.userList li {
+    transform: translateY(0px);
+  } */
+
+/* .welcome {
+  background-image: url(comicbackground.jpg);
+} */
