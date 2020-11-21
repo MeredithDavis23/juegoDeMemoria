@@ -1,18 +1,65 @@
 body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
   /* background-color: lightgray; */
   background-image: url(comicbackground.jpg);
   /* background-repeat: no-repeat; */
-  background-size: ;
+  background-size: 100%;
+  font-family: "Nerko One", cursive;
+  font-size: 40px;
 }
-.navBar {
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: rgb(31, 31, 189);
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 30px 30px 30px;
+  padding: 40px;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  /* height: 70%;
+  width: 70%; */
+  /* background: linear-gradient(#e66465, #9198e5);
+  background: -webkit-linear-gradient(#e66465, #9198e5);
+  background: -moz-linear-gradient(#e66465, #9198e5); */
+}
+button {
+  height: 100px;
+  width: 20%;
+  background: linear-gradient(#e66465, #9198e5);
+  background: -webkit-linear-gradient(#e66465, #9198e5);
+  background: -moz-linear-gradient(#e66465, #9198e5);
+  font-family: "Nerko One", cursive;
+  box-shadow: 2px 2px 7px 2px;
+  margin: 20px;
+}
+
+button:hover {
+  background: #6d77df;
+}
+
+span.emoji {
+  font-size: 30px;
+  vertical-align: middle;
+  /* line-height: 2; */
+}
+
+/* .navBar {
   height: 70px;
   width: auto;
   background-color: rgb(29, 121, 121);
   display: flex;
   align-items: center;
   padding: 0px 0px 0px 20px;
-}
-.button {
+} */
+/* .button {
   position: absolute;
   border: none;
   height: 50px;
@@ -21,8 +68,8 @@ body {
   left: 20px;
   margin: 0 auto;
   background-color: rgb(29, 121, 121);
-}
-.button--middle {
+} */
+/* .button--middle {
   display: block;
   position: absolute;
   width: 40px;
@@ -48,7 +95,7 @@ body {
 
 .button--middle::after {
   top: 10px;
-}
+} */
 
 /* .button--middle:hover:before {
     box-shadow: 0 0 0 #fff;
@@ -111,6 +158,7 @@ body {
 .link {
   text-decoration: none;
   color: white;
+  font-size: 30px;
 }
 
 /* .ul.userList li {

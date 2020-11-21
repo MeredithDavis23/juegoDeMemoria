@@ -1,4 +1,5 @@
 import React from 'react';
+// import styles from './Avatar.css'
 import ironman from './ironman.png'
 import superman from './superman.png'
 import frankenstein from './frankenstein.png'
@@ -10,35 +11,78 @@ import wonderwoman from './wonderwoman.png'
 import './Avatar.css'
 
 const Avatar = () => {
+    // const [wobble, setWobble] = React.useState(0)
     return (
         <div className="avatars">
-            <h1>Pick your Avatar</h1>
+            <h1>¡Escoge tu avatar!</h1>
+            <div className="avatar-buttons">
             <a href="ironman.png">
-            <img className="ironman"
+            <img 
+            className="ironman"
             src={ironman}
-            alt="ironman" />
+            alt="ironman"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+                 />
             </a>
-            <img className="superman"
+            <img 
+            className="superman"
             src={superman}
-            alt="superman" />
-            <img className="avenger"
+            alt="superman"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="avenger"
             src={avenger}
-            alt="avenger" />
-            <img className="frankenstein"
+            alt="avenger" 
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="frankenstein"
             src={frankenstein}
-            alt="frankenstein" />
-            <img className="kitty"
+            alt="frankenstein"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="kitty"
             src={kitty}
-            alt="kitty" />
-            <img className="supergirl"
+            alt="kitty"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="supergirl"
             src={supergirl}
-            alt="supergirl" />
-            <img className="unicorn"
+            alt="supergirl"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="unicorn"
             src={unicorn}
-            alt="unicorn" />
-            <img className="wonderwoman"
+            alt="unicorn"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            <img 
+            className="wonderwoman"
             src={wonderwoman}
-            alt="wonderwoman" />
+            alt="wonderwoman"
+            // onClick={() => setWobble(1)}
+            // onAnimationEnd={() => setWobble(0)}
+            // wobble={wobble}
+            />
+            </div>
         </div>
     )
 }

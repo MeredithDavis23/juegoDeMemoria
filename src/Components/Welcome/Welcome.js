@@ -12,10 +12,11 @@ const Welcome = () => {
     return (
         <div>
             {/* <h3>{translate('Hello world', 'es')}</h3> */}
-            <NavBar toggled={toggled} setToggle={setToggle} />
             <div className="welcome">
-              <h3 className="temporary header">Welcome to Memory!</h3>
-              </div>
+              <h3 className="temporary header">¡Bienvenidos a Súpermemoria!</h3>
+            </div>
+            <NavBar toggled={toggled} setToggle={setToggle} />
+          
         </div>
       );
 }
