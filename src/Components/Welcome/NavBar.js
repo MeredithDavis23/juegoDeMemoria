@@ -25,7 +25,7 @@ export default function NavBar(props) {
 
   return (
     <div className="buttons">
-      <button>
+      <button className="navBar">
       <ul>
         <span role="img" class="emoji" aria-label="Choose an Avatar">
           🧍
@@ -33,7 +33,7 @@ export default function NavBar(props) {
           <Link to="/avatar" className='link'>Escoge un avatar</Link>
       </ul>
       </button>
-      <button>
+      <button className="navBar">
       <ul>
         <span role="img" class="emoji" aria-label="Play Game">
         😃 
@@ -41,7 +41,7 @@ export default function NavBar(props) {
           <Link to="/game" className='link'>Jugar</Link>
       </ul>
       </button>
-      <button>
+      <button className="navBar">
         <ul>
           <span role="img" class="emoji" aria-label="Exit">
             ❌

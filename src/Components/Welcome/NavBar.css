@@ -30,7 +30,7 @@ body {
   background: -webkit-linear-gradient(#e66465, #9198e5);
   background: -moz-linear-gradient(#e66465, #9198e5); */
 }
-button {
+.navBar {
   height: 100px;
   width: 20%;
   background: linear-gradient(#e66465, #9198e5);
@@ -41,7 +41,7 @@ button {
   margin: 20px;
 }
 
-button:hover {
+.navBar:hover {
   background: #6d77df;
 }
 
