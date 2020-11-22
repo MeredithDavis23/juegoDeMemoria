@@ -15,8 +15,10 @@ class Card extends React.Component {
         picture = ''
       }
       return (
-        <div onClick={this.props.flip} className={`memory-card ${this.props.hasFlipped ? 'has-flipped': ''}`} id="memory-card">
+        <div onClick={this.props.flip} className={`card ${this.props.hasFlipped ? 'has-flipped': ''}`} id="memory-card">
+          <div className="front">
           {picture}
+          </div>
         </div>
       )
     }
