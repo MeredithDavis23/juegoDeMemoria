@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,13 +11,13 @@
 }
 
 .game-screen {
-  height: 100vh;
-  display: flex;
-  border: 4px solid black;
-  margin: 20px;
-  /* background-color: #060ab2; */
-}
-.memory-game {
+  /* height: 100vh; */
+/* display: flex; */
+/* border: 4px solid black;
+  margin: 20px; */
+/* background-color: #060ab2; */
+/* } */
+/* .memory-game {
   width: 640px;
   height: 640px;
   margin: auto;
@@ -61,4 +61,4 @@
 
 .card.has-flipped {
   transform: rotateY(180deg);
-}
+} */

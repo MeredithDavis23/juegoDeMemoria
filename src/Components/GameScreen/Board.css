@@ -3,6 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.game-header {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 30px;
+  background-color: rgb(45, 109, 161);
+}
+
+.game-screen {
+  background-image: url(superhero-background.jpeg);
+  background-size: 100%;
+}
+
 .memory-game {
   width: 640px;
   height: 640px;
@@ -43,4 +56,48 @@
 }
 .front {
   transform: rotateY(180deg);
+}
+
+.reset-div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reset-button {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-image: linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  background-image: -webkit-linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  background-image: -moz-linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px 2px;
+}
+
+.reset-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }

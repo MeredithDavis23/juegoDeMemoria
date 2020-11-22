@@ -1,15 +1,18 @@
 import React from 'react';
-import Board from './Board'
-import './Game.css'
+// import Board from './Board'
+// import './Game.css'
+import BoardPractice from './ImageButton'
+// import Test from './Test'
+import './Board.css'
 
 
 function Game() {
     return (
-      <div>
+      <div className="game-screen">
         <h1 className="game-header">Jugar</h1> 
-        <div className="game-screen">
+        <div className>
           <div className="memory-game">
-        <Board />
+        <BoardPractice />
         </div>
         </div>
       </div>

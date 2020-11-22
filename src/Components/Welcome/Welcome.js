@@ -10,10 +10,10 @@ import './NavBar.css'
 const Welcome = () => {
     const [toggled, setToggle] = useState(false)
     return (
-        <div>
+        <div className="welcome-screen">
             {/* <h3>{translate('Hello world', 'es')}</h3> */}
             <div className="welcome">
-              <h3 className="temporary header">¡Bienvenidos a Súpermemoria!</h3>
+              <h3 className="temporary-header">¡Bienvenidos a Súpermemoria!</h3>
             </div>
             <NavBar toggled={toggled} setToggle={setToggle} />
           
