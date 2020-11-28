@@ -7,7 +7,7 @@ body {
   background-size: 100%;
   font-family: "Nerko One", cursive;
   font-size: 40px;
-  background-image: url(comicbackground.jpg);
+  background-image: url(superhero-background.jpeg);
   background-size: 100%;
 }
 
@@ -15,7 +15,7 @@ body {
   width: 100%;
   height: 100%;
   margin: auto;
-  background-image: url(comicbackground.jpg);
+  /* background-image: url(comicbackground.jpg); */
   background-size: 100%;
   font-family: "Nerko One", cursive;
   font-size: 40px;

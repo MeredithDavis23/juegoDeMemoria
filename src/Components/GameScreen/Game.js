@@ -12,7 +12,7 @@ function Game() {
         <h1 className="game-header">Jugar</h1> 
         <div className>
           <div className="memory-game">
-        <BoardPractice />
+          <BoardPractice />
         </div>
         </div>
       </div>
@@ -20,6 +20,15 @@ function Game() {
   }
   
 
+
+
+//   {props.state.cards.map(card => {
+//     return <BoardPractice
+//     key={card.id}
+//     id={card.id}
+//     title={card.title}/>
+//   })
+// }
 
 
 // class Game extends React.Component {
