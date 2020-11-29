@@ -10,22 +10,44 @@ import avenger from './avenger (5).png'
 import wonderwoman from './wonderwoman.png'
 import './Avatar.css'
 
-const Avatar = () => {
-    // const [wobble, setWobble] = React.useState(0)
-    return (
-        <div className="avatars">
+
+// const addAvatar = (e) => {
+//     e.preventDefault();
+//     this.props.avatar(this.state.avatar)
+// }
+
+
+
+
+class Avatar extends React.Component {
+    constructor(props) {
+        super(props);
+
+    this.state = {
+        avatar: ''
+    }
+    }
+
+    addAvatar = (e) => {
+    e.preventDefault();
+    this.props.avatar(this.state.avatar)
+    console.log('add')
+}
+
+    render() {
+        return (
+            <div className="avatars" >
             <h1>¡Escoge tu avatar!</h1>
             <div className="avatar-buttons">
-            <a href="ironman.png">
             <img 
             className="ironman"
             src={ironman}
             alt="ironman"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
                  />
-            </a>
             <img 
             className="superman"
             src={superman}
@@ -84,7 +106,8 @@ const Avatar = () => {
             />
             </div>
         </div>
-    )
+        )
+    }
 }
 
 export default Avatar

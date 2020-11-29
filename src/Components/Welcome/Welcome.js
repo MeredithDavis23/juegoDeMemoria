@@ -9,6 +9,9 @@ import './NavBar.css'
 
 const Welcome = () => {
     const [toggled, setToggle] = useState(false)
+
+ 
+
     return (
         <div className="welcome-screen">
             {/* <h3>{translate('Hello world', 'es')}</h3> */}

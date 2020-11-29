@@ -8,7 +8,7 @@ class BoardPractice extends Component {
         state = {
             hasFlipped: false,
             lockBoard: false,
-
+        cards: {
             letters: [
                 {
                     id: 0,
@@ -289,6 +289,7 @@ class BoardPractice extends Component {
                 
             ]
             }
+        }
 
     // flip = () => {
     //     this.setState({
@@ -297,9 +298,9 @@ class BoardPractice extends Component {
     //     console.log("hello")
     // }
 
-    handleClick = () => {
-        console.log("hello")
-    }
+    // handleClick = () => {
+    //     console.log("hello")
+    // }
 
 
     // flipCard = () => {
@@ -357,10 +358,10 @@ class BoardPractice extends Component {
 
     resetBoard = () => {
         this.setState({
-            ...this.state,
+            // ...this.state,
             // hasFlipped: false
         })
-        // window.location.reload(false)
+        window.location.reload(false)
       
     }
 
@@ -375,9 +376,19 @@ class BoardPractice extends Component {
     
     // this.state.cards.forEach(card => card.addEventListener('click', flipCard));
 
-
-
+//  const shuffleImage = (images) => {
+//         let i = images.length - 1;
+//         for(let i=0; i>0; i--) {
+//             const j = Math.floor(Math.random() * (i + 1));
+//             const temp =images[i]
+//             images[i] = images[j]
+//             images[j] = temp
+//         }
+//         return images
+//     }
+    
     render() {
+        // const shuffledImages = shuffleImage(this.props.images)
         return (
             <div className="gamescreen">
             <div className="reset-div">
@@ -386,6 +397,12 @@ class BoardPractice extends Component {
                 {/* <h1 className="game-header">Game</h1>  */}
             <div className>
                <section className="memory-game">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
                    <Card />
                    <Card />
                    <Card />

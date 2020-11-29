@@ -4,22 +4,41 @@ import React from 'react';
 import BoardPractice from './ImageButton'
 // import Test from './Test'
 import './Board.css'
+import Avatar from '../Avatar/Avatar'
 
+class Game extends React.Component {
+  state = {
+    avatar: ''
+  }
 
-function Game() {
+  handleAvatar = (avatar) => {
+    this.setState({ avatar: avatar})
+    console.log('working')
+  }
+
+  render() {
+    const {avatar} = this.props
     return (
-      <div className="game-screen">
+      <div className="game-screen" avatar={this.handleAvatar}>
         <h1 className="game-header">Jugar</h1> 
-        <div className>
+        <div className="avatar">{avatar}</div>
           <div className="memory-game">
           <BoardPractice />
         </div>
         </div>
-      </div>
     );
   }
-  
+}
+  // const { avatar } = this.props
+ 
 
+  // cards.find(function(value, idx) {
+  //   if(letters.index === images.index) {
+  //     this.setState({
+
+  //     })
+  //   }
+  // }
 
 
 //   {props.state.cards.map(card => {
