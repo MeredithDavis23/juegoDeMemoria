@@ -29,77 +29,79 @@ class Avatar extends React.Component {
     }
 
     addAvatar = (e) => {
-    e.preventDefault();
-    this.props.avatar(this.state.avatar)
+    // e.preventDefault();
+    // this.props.avatar(this.state.avatar)
     console.log('add')
 }
 
     render() {
         return (
             <div className="avatars" >
-            <h1>¡Escoge tu avatar!</h1>
+            <h1 className="escoge">¡Escoge tu avatar!</h1>
             <div className="avatar-buttons">
+                <img 
+                className="avatar-pic"
+                src={ironman}
+                alt="ironman"
+                onClick={this.addAvatar} />
             <img 
-            className="ironman"
-            src={ironman}
-            alt="ironman"
+            className="avatar-pic"
+            src={superman}
+            alt="superman"
             onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
-                 />
-            <img 
-            className="superman"
-            src={superman}
-            alt="superman"
-            // onClick={() => setWobble(1)}
-            // onAnimationEnd={() => setWobble(0)}
-            // wobble={wobble}
             />
-            <img 
-            className="avenger"
+             <img 
+            className="avatar-pic"
             src={avenger}
             alt="avenger" 
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
             />
-            <img 
-            className="frankenstein"
+            <img className="avatar-pic"
             src={frankenstein}
             alt="frankenstein"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
             />
-            <img 
-            className="kitty"
+             <img 
+            className="avatar-pic"
             src={kitty}
             alt="kitty"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
             />
             <img 
-            className="supergirl"
+            className="avatar-pic"
             src={supergirl}
             alt="supergirl"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
             />
-            <img 
-            className="unicorn"
+             <img 
+            className="avatar-pic"
             src={unicorn}
             alt="unicorn"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
             />
-            <img 
-            className="wonderwoman"
+              <img 
+            className="avatar-pic"
             src={wonderwoman}
             alt="wonderwoman"
+            onClick={this.addAvatar}
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
@@ -111,3 +113,11 @@ class Avatar extends React.Component {
 }
 
 export default Avatar
+
+{/* <button onClick={this.addAvatar}>
+    <img 
+    className="ironman"
+    src={ironman}
+    alt="ironman"
+    onClick={this.addAvatar} />
+</button> */}

@@ -413,8 +413,6 @@ class BoardPractice extends Component {
                    <Card />
                    <Card />
                    <Card />
-                   <Card />
-                   <Card />
             </section>
             </div>
         </div>

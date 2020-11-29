@@ -4,7 +4,15 @@ import React from 'react';
 import BoardPractice from './ImageButton'
 // import Test from './Test'
 import './Board.css'
-import Avatar from '../Avatar/Avatar'
+// import ironman from '../Avatar/ironman.png'
+// import superman from './superman.png'
+// import frankenstein from './frankenstein.png'
+// import supergirl from './supergirlPink.png'
+// import unicorn from './unicorn.png'
+// import kitty from './kitty.png'
+// import avenger from './avenger (5).png'
+// import wonderwoman from './wonderwoman.png'
+// import Avatar from '../Avatar/Avatar'
 
 class Game extends React.Component {
   state = {
@@ -21,7 +29,7 @@ class Game extends React.Component {
     return (
       <div className="game-screen" avatar={this.handleAvatar}>
         <h1 className="game-header">Jugar</h1> 
-        <div className="avatar">{avatar}</div>
+        <img className="avatar">{avatar}</img>
           <div className="memory-game">
           <BoardPractice />
         </div>
