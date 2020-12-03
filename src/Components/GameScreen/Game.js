@@ -15,21 +15,22 @@ import './Board.css'
 // import Avatar from '../Avatar/Avatar'
 
 class Game extends React.Component {
-  state = {
-    avatar: ''
-  }
+  // state = {
+  //   avatar: this.props.avatars.avatarId
+  // }
 
-  handleAvatar = (avatar) => {
-    this.setState({ avatar: avatar})
+  handleAvatar = (avatars) => {
+    this.setState({ avatars: avatars.avatarId, src: avatars.src})
     console.log('working')
   }
 
   render() {
-    const {avatar} = this.props
+    // const {avatar} = this.props
     return (
-      <div className="game-screen" avatar={this.handleAvatar}>
+      <div className="game-screen" avatars={this.handleAvatar}>
         <h1 className="game-header">Jugar</h1> 
-        <img className="avatar">{avatar}</img>
+        {/* <Avatar className="avatar" /> */}
+        <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img>
           <div className="memory-game">
           <BoardPractice />
         </div>

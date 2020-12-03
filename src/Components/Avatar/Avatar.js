@@ -1,5 +1,6 @@
 import React from 'react';
 // import styles from './Avatar.css'
+// import { useHistory } from "react-router-dom";
 import ironman from './ironman.png'
 import superman from './superman.png'
 import frankenstein from './frankenstein.png'
@@ -9,12 +10,8 @@ import kitty from './kitty.png'
 import avenger from './avenger (5).png'
 import wonderwoman from './wonderwoman.png'
 import './Avatar.css'
+// import src from '*.bmp';
 
-
-// const addAvatar = (e) => {
-//     e.preventDefault();
-//     this.props.avatar(this.state.avatar)
-// }
 
 
 
@@ -24,22 +21,116 @@ class Avatar extends React.Component {
         super(props);
 
     this.state = {
-        avatar: ''
+            avatars: [
+                {
+                    avatarId: 0, 
+                    name: "Ironman", 
+                    src: ironman
+
+                }, 
+                {
+                    avatarId: 1, 
+                    name: "Superman", 
+                    src: superman
+
+                }, 
+                {
+                    avatarId: 2, 
+                    name: "Frankenstein", 
+                    src: frankenstein
+
+                }, 
+                {
+                    avatarId: 3, 
+                    name: "Supergirl", 
+                    src: supergirl
+
+                }, 
+                {
+                    avatarId: 4, 
+                    name: "Unicorn", 
+                    src: unicorn
+
+                }, 
+                {
+                    avatarId: 5, 
+                    name: "Avenger", 
+                    src: avenger
+
+                }, 
+                {
+                    avatarId: 6, 
+                    name: "Kitty", 
+                    src: kitty
+
+                }, 
+                {
+                    avatarId: 7, 
+                    name: "Wonder Woman", 
+                    src: wonderwoman
+
+                }
+            ]
     }
     }
+
+//********************** HELPFUL FOR REDIRECT TO ANOTHER PAGE IMMEDIATELY/
+    // onClick={window.location.href='/game'}
 
     addAvatar = (e) => {
-    // e.preventDefault();
-    // this.props.avatar(this.state.avatar)
-    console.log('add')
-}
+        e.preventDefault();
+        this.setState({
+            avatar: this.avatars.avatarId, 
+            src: this.avatars.src
+        })
+        // this.props.avatar(this.state.avatar)
+    }
+
+
+    // addAvatar = (e) => {
+    // // e.preventDefault();
+    // // this.props.avatar(this.state.avatar)
+    // console.log('add')
+// }
 
     render() {
+ 
         return (
             <div className="avatars" >
             <h1 className="escoge">¡Escoge tu avatar!</h1>
             <div className="avatar-buttons">
+                {this.state.avatars.map((avatar, avatarId) =>
                 <img 
+                key={avatarId}
+                // onClick={this.addAvatar}
+                onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href='/game'
+                }}
+                avatar={avatar}
+                src={avatar.src}
+                alt=""
+                />
+                )}
+            </div>
+        </div>
+        )
+    }
+}
+
+export default Avatar
+
+// eslint-disable-next-line 
+{/* <button onClick={this.addAvatar}>
+    <img 
+    className="ironman"
+    src={ironman}
+    alt="ironman"
+    onClick={this.addAvatar} />
+</button> */}
+
+// eslint-disable-next-line 
+              {/* <img 
                 className="avatar-pic"
                 src={ironman}
                 alt="ironman"
@@ -105,19 +196,4 @@ class Avatar extends React.Component {
             // onClick={() => setWobble(1)}
             // onAnimationEnd={() => setWobble(0)}
             // wobble={wobble}
-            />
-            </div>
-        </div>
-        )
-    }
-}
-
-export default Avatar
-
-{/* <button onClick={this.addAvatar}>
-    <img 
-    className="ironman"
-    src={ironman}
-    alt="ironman"
-    onClick={this.addAvatar} />
-</button> */}
+            /> */}

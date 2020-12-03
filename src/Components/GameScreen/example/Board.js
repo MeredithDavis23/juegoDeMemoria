@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 // letters: [
 //     {
 //         id: 0,
@@ -387,3 +388,56 @@
 // }
 
 // export default Board
+
+    {/* <div class="memory-card" data-framework="A" onClick={this.flip.bind(this)}> 
+                {this.card}
+                    <img class="front" src="https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg" alt="A" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="A">
+                    <img class="front" src="https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg" alt="A" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="B">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/3069/3069172.svg" alt="B" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="B">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/3069/3069172.svg" alt="B" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="C">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/616/616408.svg" alt="C" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="C">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/616/616408.svg" alt="C" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="D">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/2930/2930627.svg" alt="D" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="D">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/2930/2930627.svg" alt="D" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="E">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/3069/3069224.svg" alt="E" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="E">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/3069/3069224.svg" alt="E" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="F">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/616/616451.svg" alt="F" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div>
+                <div class="memory-card" data-framework="F">
+                    <img class="front" src="https://www.flaticon.com/svg/static/icons/svg/616/616451.svg" alt="F" />
+                    <img class="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />
+                </div> */}
+
+
+
