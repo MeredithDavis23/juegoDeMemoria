@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState} from 'react';
 import Card from './Card'
 import './Board.css'
+// import LetterCard from './letterCard'
 // import Test from './Test'
 
 class BoardPractice extends Component {
@@ -8,7 +9,7 @@ class BoardPractice extends Component {
         state = {
             hasFlipped: false,
             lockBoard: false,
-        cards: {
+            newGame: [],
             letters: [
                 {
                     id: 0,
@@ -133,7 +134,6 @@ class BoardPractice extends Component {
                
                 
             ], 
-            
             images: [
                 {
                     id: 0,
@@ -285,27 +285,126 @@ class BoardPractice extends Component {
                     name: "Z",
                     image: "https://www.flaticon.com/svg/static/icons/svg/2912/2912369.svg"
                 }, 
-               
-                
             ]
+        }
+    
+    shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
             }
+            return this.shuffleArray(this.newGame)
         }
 
-    // flip = () => {
+    createNewGame = () => {
+        for(let i=0; i > this.letters.length; i++) {
+            this.newGame.push(i)
+        }
+        for(let j = 0; j > this.images.length; j++) {
+            this.newGame.push(j)
+        }
+        this.shuffleArray(this.newGame)
+        console.log(this.state.newGame)
+    }
+
+
+    // letterCard = () => {
+    //     let letterCard = this.cards.letters.map((letter, id) => {
     //     this.setState({
-    //         hasFlipped: !this.state.hasFlipped
+    //        id: id, 
+    //        name: name, 
+    //        letter: letter
     //     })
-    //     console.log("hello")
+    // this.state.newGame.push(this.state.letterCard)
+    // return this.state.newGame
     // }
 
-    // handleClick = () => {
-    //     console.log("hello")
-    // }
+   
+    resetBoard = () => {
+        this.setState({
+            // ...this.state,
+            // hasFlipped: false
+        })
+        window.location.reload(false)
+      
+    }
 
+    // shuffleGame() {
+    //     this.cards.sort(() => Math.random() - 0.5)
+    // }
+    
+    //wrapping function in parentheses with extra parentheses at end makes it immediately invoked
+    // shuffle() {
+    //     this.cards.forEach(card => {
+    //         let randomPos = Math.floor(Math.random() * 12);
+    //     card.style.order = randomPos;
+    //     })
+    // }
+    
+    // this.state.cards.forEach(card => card.addEventListener('click', flipCard));
+    
+    render() {
+        // const shuffledImages = shuffleImage(this.props.images)
+        return (
+            <div className="gamescreen">
+            <div className="reset-div">
+            <button className="reset-button" onClick={this.resetBoard}>Reiniciar</button>
+            </div>
+                {/* <h1 className="game-header">Game</h1>  */}
+            <div className>
+               <section className="memory-game">
+               <Card />
+                {/* <Card 
+                id={this.state.cards.images.id}/>
+                <Card 
+                 id={this.state.cards.images.id}/>
+                <Card 
+                id={this.state.cards.letters.id}/>
+                <Card 
+                 id={this.state.cards.images.id}/>
+                   <Card
+                   id={this.state.cards.letters.id} />
+                   <Card 
+                    id={this.state.cards.images.id}/>
+                   <Card 
+                   id={this.state.cards.letters.id}/>
+                   <Card
+                    id={this.state.cards.images.id} />
+                   <Card 
+                   id={this.state.cards.letters.id}/>
+                   <Card 
+                    id={this.state.cards.images.id}/>
+                   <Card 
+                   id={this.state.cards.letters.id} /> */}
+            </section>
+            </div>
+        </div>
+        )
+    }
+}
+
+export default BoardPractice
+
+
+
+ // imageCard = () => {
+    //     this.cards.images.map((image, id) => {
+    //     this.setState({
+    //        id: id, 
+    //        name: name, 
+    //        image: image
+    //     })
+    // this.newGame.push(this.imageCard)
+    // return this.state.newGame
+    // }
+    
+    
 
     // flipCard = () => {
     //     if (this.state.lockBoard) return; 
-    //     if (this === this.state.letter) return;
+    //     if (this === this.state.card.letter) return;
 
     //     this.classList.add('flip'); 
 
@@ -356,71 +455,6 @@ class BoardPractice extends Component {
     
     //can you use useState instead of setState?
 
-    resetBoard = () => {
-        this.setState({
-            // ...this.state,
-            // hasFlipped: false
-        })
-        window.location.reload(false)
-      
-    }
-
-    
-    //wrapping function in parentheses with extra parentheses at end makes it immediately invoked
-    // shuffle() {
-    //     this.cards.forEach(card => {
-    //         let randomPos = Math.floor(Math.random() * 12);
-    //     card.style.order = randomPos;
-    //     })
-    // }
-    
-    // this.state.cards.forEach(card => card.addEventListener('click', flipCard));
-
-//  const shuffleImage = (images) => {
-//         let i = images.length - 1;
-//         for(let i=0; i>0; i--) {
-//             const j = Math.floor(Math.random() * (i + 1));
-//             const temp =images[i]
-//             images[i] = images[j]
-//             images[j] = temp
-//         }
-//         return images
-//     }
-    
-    render() {
-        // const shuffledImages = shuffleImage(this.props.images)
-        return (
-            <div className="gamescreen">
-            <div className="reset-div">
-            <button className="reset-button" onClick={this.resetBoard}>Reiniciar</button>
-            </div>
-                {/* <h1 className="game-header">Game</h1>  */}
-            <div className>
-               <section className="memory-game">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-                   <Card />
-            </section>
-            </div>
-        </div>
-        )
-    }
-}
-
-export default BoardPractice
 
 // export default function BoardPractice() {
 //     const [flippedCount, setFlippedCount] = useState(0)
