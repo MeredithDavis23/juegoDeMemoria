@@ -1,11 +1,11 @@
 import React, { Component, useEffect, useState} from 'react';
 import Card from './Card'
 import './Board.css'
+import shuffleArray from './shuffleArray'
 // import LetterCard from './letterCard'
 // import Test from './Test'
 
 class BoardPractice extends Component {
-
         state = {
             hasFlipped: false,
             lockBoard: false,
@@ -287,26 +287,36 @@ class BoardPractice extends Component {
                 }, 
             ]
         }
-    
-    shuffleArray(array) {
+
+        // shuffleArray(array) {
+        //     for (var i = array.length - 1; i > 0; i--) {
+        //         var j = Math.floor(Math.random() * (i + 1));
+        //         var temp = array[i];
+        //         array[i] = array[j];
+        //         array[j] = temp;
+        //     }
+        //     return this.shuffleArray(this.newGame)
+        // }
+
+        shuffleArray = (array) => {
             for (var i = array.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
                 var temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
             }
-            return this.shuffleArray(this.newGame)
+             return array
         }
-
+    
     createNewGame = () => {
-        for(let i=0; i > this.letters.length; i++) {
-            this.newGame.push(i)
+        for(let i=0; i < this.letters.length; i++) {
+            this.newGame.push(this.letters[i])
         }
-        for(let j = 0; j > this.images.length; j++) {
-            this.newGame.push(j)
+        for(let j = 0; j < this.images.length; j++) {
+            this.newGame.push(this.images[j])
         }
-        this.shuffleArray(this.newGame)
-        console.log(this.state.newGame)
+        return this.shuffleArray(this.newGame)
+        // return this.createNewGame(this.newGame)
     }
 
 
@@ -356,28 +366,29 @@ class BoardPractice extends Component {
             <div className>
                <section className="memory-game">
                <Card />
-                {/* <Card 
-                id={this.state.cards.images.id}/>
                 <Card 
-                 id={this.state.cards.images.id}/>
+                id={this.state.images.id}
+                src={this.state.images.src}/>
                 <Card 
-                id={this.state.cards.letters.id}/>
+                 id={this.state.images.id}/>
                 <Card 
-                 id={this.state.cards.images.id}/>
+                id={this.state.letters.id}/>
+                <Card 
+                 id={this.state.images.id}/>
                    <Card
-                   id={this.state.cards.letters.id} />
+                   id={this.state.letters.id} />
                    <Card 
-                    id={this.state.cards.images.id}/>
+                    id={this.state.images.id}/>
                    <Card 
-                   id={this.state.cards.letters.id}/>
+                   id={this.state.letters.id}/>
                    <Card
-                    id={this.state.cards.images.id} />
+                    id={this.state.images.id} />
                    <Card 
-                   id={this.state.cards.letters.id}/>
+                   id={this.state.letters.id}/>
                    <Card 
-                    id={this.state.cards.images.id}/>
+                    id={this.state.images.id}/>
                    <Card 
-                   id={this.state.cards.letters.id} /> */}
+                   id={this.state.letters.id} />
             </section>
             </div>
         </div>

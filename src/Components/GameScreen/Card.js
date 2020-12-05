@@ -39,7 +39,7 @@ render () {
     // <cardFront />
     // </div>
   <div className="memory-card" onClick={this.flip}> 
-    <img className="front" src="https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg" alt="A" />   
+    <img className="front" src={"https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg"} alt="A" />   
 </div>
   )
   } else {

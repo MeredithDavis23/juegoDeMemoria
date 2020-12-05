@@ -4,6 +4,7 @@ import React from 'react';
 import BoardPractice from './ImageButton'
 // import Test from './Test'
 import './Board.css'
+// import Board from '../GameScreen/example/Board'
 // import ironman from '../Avatar/ironman.png'
 // import superman from './superman.png'
 // import frankenstein from './frankenstein.png'
