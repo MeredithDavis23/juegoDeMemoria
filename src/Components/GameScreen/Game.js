@@ -1,44 +1,133 @@
-import React from 'react';
-// import Board from './Board'
-// import './Game.css'
-import BoardPractice from './ImageButton'
-// import Test from './Test'
+// import React from 'react';
+// import BoardPractice from './Deck'
+// import './Board.css'
+
+
+
+import React, { useState, useEffect } from "react";
+import BoardPractice from "./Deck";
+import initializeDeck from "./InitializeDeck";
 import './Board.css'
-// import Board from '../GameScreen/example/Board'
-// import ironman from '../Avatar/ironman.png'
-// import superman from './superman.png'
-// import frankenstein from './frankenstein.png'
-// import supergirl from './supergirlPink.png'
-// import unicorn from './unicorn.png'
-// import kitty from './kitty.png'
-// import avenger from './avenger (5).png'
-// import wonderwoman from './wonderwoman.png'
-// import Avatar from '../Avatar/Avatar'
 
-class Game extends React.Component {
-  // state = {
-  //   avatar: this.props.avatars.avatarId
-  // }
+export default function Game() {
+  const [flipped, setFlipped] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [dimension, setDimension] = useState(400);
+  const [solved, setSolved] = useState([]);
+  const [disabled, setDisabled] = useState(false);
 
-  handleAvatar = (avatars) => {
-    this.setState({ avatars: avatars.avatarId, src: avatars.src})
-    console.log('working')
-  }
+  useEffect(() => {
+    resizeBoard();
+    setCards(initializeDeck());
+  }, []);
 
-  render() {
-    // const {avatar} = this.props
-    return (
-      <div className="game-screen" avatars={this.handleAvatar}>
-        <h1 className="game-header">Jugar</h1> 
-        {/* <Avatar className="avatar" /> */}
-        <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img>
-          <div className="memory-game">
-          <BoardPractice />
-        </div>
-        </div>
+  // useEffect(() => {
+  //   preloadImages();
+  // }, cards);
+
+  //changes size of board based on screen size
+  useEffect(() => {
+    const resizeListener = window.addEventListener("resize", resizeBoard);
+
+    return () => window.removeEventListener("resize", resizeListener);
+  });
+
+  //can flip 2 values but not 3
+  const handleClick = (id) => {
+    //disables card after flip
+    setDisabled(true);
+    if (flipped.length === 0) {
+      setFlipped([id]);
+      setDisabled(false);
+    } else {
+      if (sameCardClicked(id)) return;
+      setFlipped([flipped[0], id]);
+      if (isMatch(id)) {
+        //gives already solved cards, first flipped, and one just flipped
+        setSolved([...solved, flipped[0], id]);
+        resetCards();
+      } else {
+        setTimeout(resetCards, 2000);
+      }
+    }
+  };
+
+  //precache images
+  // const preloadImages = () => {
+  //   cards.map((card) => {
+  //     const src = `/img/${card.type}.png`;
+  //     console.log(src);
+  //     new Image().src = src;
+  //   });
+  // };
+
+  const resetCards = () => {
+    setFlipped([]);
+    setDisabled(false);
+  };
+
+  const isMatch = (id) => {
+    //just clicked card
+    const clickedCard = cards.find((card) => card.id === id);
+    //card you flipped first, compare to clicked card
+    const flippedCard = cards.find((card) => flipped[0] === card.id);
+    //match them based on the type ("react", 'vue', etc in this example)
+    return flippedCard.type === clickedCard.type;
+  };
+
+  //if becomes true then clicking same card twice
+  const sameCardClicked = (id) => flipped.includes(id);
+
+  const resizeBoard = () => {
+    setDimension(
+      Math.min(
+        document.documentElement.clientWidth,
+        document.documentElement.clientHeight
+      )
     );
-  }
+  };
+  return (
+    <div className="game-screen">
+    <h1 className="game-header">Jugar</h1> 
+    <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img>
+    <div className="memory-game">
+      <BoardPractice
+        dimension={dimension}
+        cards={cards}
+        flipped={flipped}
+        handleClick={handleClick}
+        disabled={disabled}
+        solved={solved}
+      />
+      </div>
+    </div>
+  );
 }
+
+// class Game extends React.Component {
+//   // state = {
+//   //   avatar: this.props.avatars.avatarId
+//   // }
+
+//   handleAvatar = (avatars) => {
+//     this.setState({ avatars: avatars.avatarId, src: avatars.src})
+//     console.log('working')
+//   }
+
+//   render() {
+//     // const {avatar} = this.props
+//     return (
+//       <div className="game-screen" avatars={this.handleAvatar}>
+//         <h1 className="game-header">Jugar</h1> 
+//         {/* <Avatar className="avatar" /> */}
+//         <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img>
+//           <div className="memory-game">
+//           <BoardPractice />
+//         </div>
+//         </div>
+//     );
+//   }
+// }
   // const { avatar } = this.props
  
 
@@ -270,4 +359,4 @@ class Game extends React.Component {
 //      );
 // }
  
-export default Game;
+// export default Game;

@@ -1,75 +1,57 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 // import './Card.css'
 // import cardFront from './cardFront'
 // import cardBack from './cardBack'
 import './Board.css'
 
 
-
-
-class Card extends React.Component {
-  constructor(props) {
-    super(props)
-  this.state = {
-    hasFlipped: false,
-  };
-  this.flip = this.flip.bind(this)
-  }
-
-  flip = (event) => {
-    event.preventDefault();
-    this.setState({
-      hasFlipped: !this.state.hasFlipped
-    })
-}
-
-// resetBoard() {
-//   console.log('reset')
-//   this.setState({
-//       hasFlipped: false, 
-//       lockBoard: false, 
-//       letter: null, 
-//       image: null
-//   })
-// }
-render () {
-  if(this.state.hasFlipped) {
+export default function Card({
+  handleClick,
+  id,
+  type,
+  flipped,
+  height,
+  width,
+  disabled,
+  solved
+}) {
   return (
-    // <div className="memory-card">
-    // <cardFront />
-    // </div>
-  <div className="memory-card" onClick={this.flip}> 
-    <img className="front" src={"https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg"} alt="A" />   
-</div>
-  )
-  } else {
-    return (   
-    // <div className="memory-card">
-    //   <cardBack />
-    //   </div>
-    <div className="memory-card" onClick={this.flip}> 
-      <img className="back" src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />   
+    <div
+      className={`memory-card ${flipped ? "flipped" : ""}`}
+      style={{
+        width,
+        height
+      }}
+      onClick={() => (disabled ? null : handleClick(id))}
+    >
+      <div className="flipper">
+        <img
+          style={{ height, width }}
+          className={flipped ? "front" : "back"}
+          src={
+            flipped || solved
+              ? `../img/abeja.svg`
+              : "https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg"
+          }
+          alt=""
+        ></img>
+      </div>
     </div>
-    )
-  }
+  );
 }
-}
-// render() {
-//   return (
-//       <div className="memory-card" onClick={this.flip}> 
-//       <div className="back">
-//          <img src="https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg" alt="back" />   
-//          </div>
-//          <div className="front">
-//               <img className="front" src="https://www.flaticon.com/premium-icon/icons/svg/2153/2153090.svg" alt="A" />   
-//          </div>   
-//       </div>
-//   )
-// }
-// }
 
+Card.propTypes = {
+  flipped: PropTypes.bool.isRequired,
+  solved: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  disabled: PropTypes.bool.isRequired
+};
 
-export default Card;
 
 
 
