@@ -26,7 +26,7 @@ export default function BoardPractice({
         <Card
           key={card.id}
           id={card.id}
-          type={100}
+          type={card.type}
           width={dimension / 4.5}
           height={dimension / 4.5}
           flipped={flipped.includes(card.id)}

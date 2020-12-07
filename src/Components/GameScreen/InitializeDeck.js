@@ -11,9 +11,9 @@ function shuffle(array) {
   
   export default function initializeDeck() {
     let id = 0;
-    const cards = [ "abeja", "ballena", "carro", "chile", "dinosaurio", "elefante", "fuego", "guitarra", "hamburguesa", "isla", "jirafa", 
-        "koala", "leon", "mono", "nido", "ñandú", "oso", "pulpo", "queso", "rana", "guitarra", "sol", "tortuga", "unicornio",
-        "vaca", "washington", "xilofono", "yoyo", "zapato" ].reduce((acc, type) => {
+    const cards = ['abeja', 'ballena', 'carro', 'chile', 'dinosaurio', 'elefante', 'fuego', 'gato', 'hamburguesa', 'isla', 'jirafa', 
+        'koala', 'leon', 'mono', 'nido', 'ñandú', 'oso', 'pulpo', 'queso', 'rana', 'sol', 'tortuga', 'unicornio',
+        'vaca', 'washington', 'xilofono', 'yoyo', 'zapato'].reduce((acc, type) => {
       //pushing images onto the empty array. Does it twice
       //two images to match together
       acc.push({
@@ -24,7 +24,11 @@ function shuffle(array) {
         id: id++,
         type
       });
-      return acc;
+      return acc
     }, []);
     return shuffle(cards);
   }
+
+  // const letterCards = ['abeja', 'ballena', 'carro', 'chile', 'dinosaurio', 'elefante', 'fuego', 'gato', 'hamburguesa', 'isla', 'jirafa', 
+  // 'koala', 'leon', 'mono', 'nido', 'ñandú', 'oso', 'pulpo', 'queso', 'rana', 'sol', 'tortuga', 'unicornio',
+  // 'vaca', 'washington', 'xilofono', 'yoyo', 'zapato']

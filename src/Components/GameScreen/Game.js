@@ -52,7 +52,7 @@ export default function Game() {
     }
   };
 
-  //precache images
+  // precache images
   // const preloadImages = () => {
   //   cards.map((card) => {
   //     const src = `/img/${card.type}.png`;

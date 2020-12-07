@@ -31,7 +31,7 @@ export default function Card({
           className={flipped ? "front" : "back"}
           src={
             flipped || solved
-              ? `../img/abeja.svg`
+              ? `/img/${type}.png`
               : "https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg"
           }
           alt=""
