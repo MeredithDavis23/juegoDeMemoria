@@ -5,7 +5,8 @@ class Avatar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemon: []
+            pokemon: [], 
+            pokemonListings: []
         }
     }
 
@@ -24,6 +25,13 @@ class Avatar extends React.Component {
                     this.state.pokemon.map(pokemon => {
                         fetch(pokemon.url)
                         .then(response => response.json())
+                        .then(data => {
+                            if (data) {
+                                var temp = this.state.pokemonListings
+                                temp.push(data)
+                                this.setState({pokemon: temp})
+                            }
+                        })
                     })
                 })
             }
@@ -31,13 +39,22 @@ class Avatar extends React.Component {
         .catch((error) => console.log("parsing error", error));
         }
 
+
+        
+        randomize() {
+            const randomPokemon = Math.floor(Math.random() * 10)
+            return this.pokemon[randomPokemon]
+        }
     render() {
-        const {pokemon} = this.state
+        const {pokemonListings} = this.state
+        const pokeList = pokemonListings.map((poke, index) => {
+            return (<PokemonImage poke={poke} />)
+        })
         return (
             <div className="avatars" >
             <h1 className="escoge">¡Escoge tu avatar!</h1>
-            <div className="avatar-buttons">
-               <PokemonImage pokemon={pokemon} />
+            <div className>
+               {pokeList}
             </div>
         </div>
         )

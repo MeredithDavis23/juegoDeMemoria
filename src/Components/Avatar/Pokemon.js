@@ -1,9 +1,13 @@
 import React from 'react';
+import './Avatar.css'
 
-const PokemonImage = ({pokemon}) => {
+const PokemonImage = ({poke}) => {
     return (
-        <div>
-            <img src={pokemon.sprites['front_default']} alt ="" />
+        <div className>
+            <img src={poke.sprites['front_default']} alt =""
+             onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/game'}}/>
         </div>
     )
 }

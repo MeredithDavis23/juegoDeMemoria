@@ -49,6 +49,13 @@
   text-align: center;
 }
 
+.pokemon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .escoge {
   color: cornsilk;
   font-size: 10vh;

@@ -7,9 +7,10 @@ class Avatar extends React.Component {
             pokemon: []
         }
     }
+ 
 
     componentDidMount() {
-        fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+        fetch('https://pokeapi.co/api/v2/pokemon')
         .then((response) => response.json())
         .then((data) => 
             this.setState({
@@ -17,6 +18,13 @@ class Avatar extends React.Component {
             })
         )
         .catch((error) => console.log("parsing error", error));
+
+        this.randomize();
+        }
+
+        randomize() {
+            const randomPokemon = Math.floor(Math.random() * this.pokemon.length)
+            return this.pokemon[randomPokemon]
         }
 
     componentDidUpdate() {
