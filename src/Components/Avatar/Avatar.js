@@ -6,8 +6,17 @@ class Avatar extends React.Component {
         super(props);
         this.state = {
             pokemon: [], 
-            pokemonListings: []
+            pokemonListings: [], 
+            avatarPic: ''
         }
+    }
+
+    handleClick = (e) => {
+        e.preventdefault();
+        this.setState({
+            avatarPic: e.target.value
+        })
+        window.location.href='/game'
     }
 
     componentDidMount() {
@@ -46,16 +55,21 @@ class Avatar extends React.Component {
             return this.pokemon[randomPokemon]
         }
     render() {
-        const {pokemonListings} = this.state
+        const {pokemonListings, avatarPic} = this.state
         const pokeList = pokemonListings.map((poke, index) => {
-            return (<PokemonImage poke={poke} />)
+            return (<PokemonImage  poke={poke} />)
         })
         return (
-            <div className="avatars" >
+            <div>
             <h1 className="escoge">¡Escoge tu avatar!</h1>
-            <div className>
+            <button className="back-button" onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/'}}><span>⮨</span> Regresar</button>
+            <div className="avatars" >
+            <div className="pokemon">
                {pokeList}
             </div>
+        </div>
         </div>
         )
     }

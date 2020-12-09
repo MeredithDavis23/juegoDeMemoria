@@ -22,7 +22,7 @@ export default function BoardPractice({
 }) {
   return (
     <div className="memory-game">
-      {cards.slice(0, cards.length/6).map((card) => (
+      {cards.map((card) => (
         <Card
           key={card.id}
           id={card.id}
@@ -39,6 +39,9 @@ export default function BoardPractice({
     </div>
   );
 }
+
+//goes on cards.slice......map
+// slice(0, cards.length/4.5)
 
 // eslint-disable-next-line react/no-typos
 BoardPractice.PropTypes = {

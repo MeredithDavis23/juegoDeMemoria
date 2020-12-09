@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Avatar.css'
 
 const PokemonImage = ({poke}) => {
+    useEffect(() => {console.log(poke)})
     return (
-        <div className>
-            <img src={poke.sprites['front_default']} alt =""
-             onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/game'}}/>
+        <div>
+            <img src={poke.sprites['front_default']} onClick={(e) => {
+    e.preventDefault();
+    window.location.href='/game'}} alt =""
+    />
         </div>
     )
 }
 
 export default PokemonImage
+
+// onClick={(e) => {
+//     e.preventDefault();
+//     window.location.href='/game'}}

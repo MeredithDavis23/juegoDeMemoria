@@ -32,7 +32,7 @@ export default function Card({
           src={
             flipped || solved
               ? `/img/${type}.png`
-              : "https://www.flaticon.com/svg/static/icons/svg/3004/3004112.svg"
+              : "https://www.flaticon.com/svg/static/icons/svg/361/361998.svg"
           }
           alt=""
         ></img>

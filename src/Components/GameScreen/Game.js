@@ -8,6 +8,7 @@ import React, { useState, useEffect } from "react";
 import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
 import './Board.css'
+import PokemonImage from "../Avatar/Pokemon";
 
 export default function Game() {
   const [flipped, setFlipped] = useState([]);
@@ -87,9 +88,11 @@ export default function Game() {
     );
   };
   return (
+    <div>
     <div className="game-screen">
     <h1 className="game-header">Jugar</h1> 
-    <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img>
+    {/* <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img> */}
+    {/* <PokemonImage /> */}
     <div className="memory-game">
       <BoardPractice
         dimension={dimension}
@@ -100,6 +103,10 @@ export default function Game() {
         solved={solved}
       />
       </div>
+    </div>
+    <button className="back-button" onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/'}}><span>⮨</span> Regresar</button>
     </div>
   );
 }
