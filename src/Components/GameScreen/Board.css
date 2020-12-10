@@ -5,7 +5,7 @@
 }
 
 .game-header {
-  height: 12%;
+  font-size: 140%;
   margin: auto;
   text-align: center;
   padding-bottom: 30px;
@@ -24,23 +24,32 @@
   /* background-image: url(superhero-background.jpeg); */
   background-size: 100%;
   height: 100%;
+  /* width: 100%; */
 }
 
 .memory-game {
-  width: 95%;
-  height: 90%;
+  padding-top: 0;
+  width: 99.6%;
+  /* height: 88%; */
   margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  perspective: 1000px;
+  /* perspective: 1000px; */
+  /* margin: 0px;
+  padding: 0px; */
 }
 
 .game-buttons {
+  height: 5%;
+
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   text-align: center;
+  /* height: 10%; */
+  padding-bottom: 0;
+  margin: 0;
 }
 .memory-card {
   width: calc(25% - 10px);

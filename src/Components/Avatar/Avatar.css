@@ -75,7 +75,7 @@
 }
 
 .back-button {
-  height: 20%;
+  height: 10%;
   display: inline;
   flex-wrap: wrap;
   margin: 20px;
@@ -124,9 +124,12 @@ img {
   background-color: cornsilk;
   border-radius: 4px;
   justify-content: center;
-  padding: 10px;
+  text-align: center;
+  width: 70%;
+  height: 70%;
+  padding: 20px;
   /* width: 10%; */
-  margin: 30px;
+  margin: 20px;
 }
 
 img:hover {

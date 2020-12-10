@@ -159,16 +159,16 @@ export default function Game() {
 
   return (
     <div>
-    <div className="game-screen">
-    <h1 className="game-header">¡Que Comience el Juego!</h1> 
-    {/* <PokemonImage /> */}
-    <div className="game-buttons">
+      <h1 className="game-header">¡Que Comience el Juego!</h1> 
+      <div className="game-buttons">
     {/* <img className="avatar" alt="" handleClick={handleClick} ></img> */}
     <button className="back-button" onClick={(e) => {
                 e.preventDefault();
                 window.location.href='/'}}><span>🡠</span> Regresar</button>
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
     </div>
+    <div className="game-screen">
+    {/* <PokemonImage /> */}
     <div className="memory-game">
       <BoardPractice
         dimension={dimension}

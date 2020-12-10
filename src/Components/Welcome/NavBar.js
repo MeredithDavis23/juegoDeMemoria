@@ -24,7 +24,7 @@ export default function NavBar(props) {
 
 
   return (
-    <div className="buttons">
+    <div className="navBar-buttons">
       <button className="navBar">
       <ul>
         <span role="img" className="emoji" aria-label="Choose an Avatar">
