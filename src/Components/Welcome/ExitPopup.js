@@ -4,7 +4,7 @@ import './Exit.css'
 
 const Exit = () => {
     return ( 
-     <div class="box sb9">¡Buen trabajo Pokemon Master!</div> 
+     <div class="box sb9">¡Bien hecho Pokemon Master!</div> 
 
 
 //         <div>

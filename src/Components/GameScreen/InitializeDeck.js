@@ -22,7 +22,7 @@ function shuffle(array) {
   
   export default function initializeDeck() {
     const letterCards = ['a', 'e', 'h', 'i', 'o', 'u', 'x', 'y']
-    const imageCards = ['abeja', 'elefante', 'hamburguesa', 'isla', 'oso', 'unicornio', 'xilofono',
+    const imageCards = ['abeja', 'elefante','hamburguesa', 'isla', 'oso', 'unicornio', 'xilofono',
     'yoyo']
     const cardsArray = letterCards.concat(imageCards)
     console.log(cardsArray)

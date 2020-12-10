@@ -8,7 +8,8 @@ import React, { useState, useEffect } from "react";
 import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
 import './Board.css'
-import PokemonImage from "../Avatar/Pokemon";
+// import PokemonImage from "../Avatar/Pokemon";
+import shuffle from './InitializeDeck'
 
 export default function Game() {
   const [flipped, setFlipped] = useState([]);
@@ -16,6 +17,17 @@ export default function Game() {
   const [dimension, setDimension] = useState(400);
   const [solved, setSolved] = useState([]);
   const [disabled, setDisabled] = useState(false);
+  // const [windowSize, setWindowSize] = useState({
+  //   width: undefined, 
+  //   height: undefined
+  // });
+
+
+  // useEffect(() => {
+  //   setWindowSize(); 
+  //   setCards(initializeDeck())
+  // }, [])
+
 
   useEffect(() => {
     resizeBoard();
@@ -26,7 +38,20 @@ export default function Game() {
   //   preloadImages();
   // }, cards);
 
-  //changes size of board based on screen size
+
+
+  // useEffect(() => {
+  //   function handleResize() {
+  //     setWindowSize({
+  //       width: window.innerWidth, 
+  //       height: window.innerHeight
+  //     })
+  //   }
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize();
+  //   return () => window.removeEventListener('resize', handleResize)
+  // }, [])
+  // changes size of board based on screen size
   useEffect(() => {
     const resizeListener = window.addEventListener("resize", resizeBoard);
 
@@ -41,16 +66,18 @@ export default function Game() {
       setFlipped([id]);
       setDisabled(false);
     } else {
-      if (sameCardClicked(id)) return;
+      if (sameCardClicked(id)) 
+       return;
       setFlipped([flipped[0], id]);
       if (isMatch(id)) {
         //gives already solved cards, first flipped, and one just flipped
         setSolved([...solved, flipped[0], id]);
         resetCards();
       } else {
-        setTimeout(resetCards, 2000);
+        setTimeout(resetCards, 1500);
       }
     }
+    // console.log(flipped)
   };
 
   // precache images
@@ -67,32 +94,81 @@ export default function Game() {
     setDisabled(false);
   };
 
+  const resetBoard = () => {
+    setFlipped([]);
+    setDisabled(false);
+    setSolved([]);
+    setCards(initializeDeck);
+  }
+
   const isMatch = (id) => {
     //just clicked card
     const clickedCard = cards.find((card) => card.id === id);
     //card you flipped first, compare to clicked card
     const flippedCard = cards.find((card) => flipped[0] === card.id);
     //match them based on the type ("react", 'vue', etc in this example)
-    return flippedCard.type === clickedCard.type;
+    console.log(clickedCard.id)
+    console.log(flippedCard.id)
+    if((clickedCard.id === 0 && flippedCard.id === 8) || (flippedCard.id === 8 && clickedCard.id === 0)) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[1] && flippedCard[9]) || (clickedCard[9] && flippedCard[1])) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[2] && flippedCard[10]) || (clickedCard[10] && flippedCard[2])) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[3] && flippedCard[11]) || (clickedCard[11] && flippedCard[3])) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[4] && flippedCard[12]) || (clickedCard[12] && flippedCard[4])) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[5] && flippedCard[13]) || (clickedCard[13] && flippedCard[5])) {
+      return flippedCard.type === clickedCard.type
+    }
+    if((clickedCard[6] && flippedCard[14]) || (clickedCard[14] && flippedCard[6])) {
+      return flippedCard.type === clickedCard.type
+    }
+    // else((clickedCard[7] && flippedCard[15]) || (clickedCard[15] && flippedCard[7])) {
+    //   return flippedCard.type === clickedCard.type
+    // }
+    return flippedCard.type === clickedCard.type
   };
+
+ //triple for loop 
+//  if(clickedCard[0] && flippedCard[8] || flippedCard[8] && clickedCard[0]) {
+
+//  } else if(clickedCard[1] && flippedCard[9] || clickedCard[9] && flippedCard[1]) {
+//  }
 
   //if becomes true then clicking same card twice
   const sameCardClicked = (id) => flipped.includes(id);
 
+
+
   const resizeBoard = () => {
-    setDimension(
-      Math.min(
+    setDimension(Math.min(
         document.documentElement.clientWidth,
         document.documentElement.clientHeight
-      )
+      ),
     );
   };
+
+
+
   return (
     <div>
     <div className="game-screen">
-    <h1 className="game-header">Jugar</h1> 
-    {/* <img className="avatar" alt="" src={"https://www.flaticon.com/svg/static/icons/svg/145/145302.svg"}></img> */}
+    <h1 className="game-header">¡Que Comience el Juego!</h1> 
     {/* <PokemonImage /> */}
+    <div className="game-buttons">
+    {/* <img className="avatar" alt="" handleClick={handleClick} ></img> */}
+    <button className="back-button" onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/'}}><span>🡠</span> Regresar</button>
+      <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
+    </div>
     <div className="memory-game">
       <BoardPractice
         dimension={dimension}
@@ -101,12 +177,10 @@ export default function Game() {
         handleClick={handleClick}
         disabled={disabled}
         solved={solved}
+        // windowSize={windowSize}
       />
       </div>
     </div>
-    <button className="back-button" onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/'}}><span>⮨</span> Regresar</button>
     </div>
   );
 }

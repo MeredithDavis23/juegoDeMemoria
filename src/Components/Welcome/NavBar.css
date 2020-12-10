@@ -31,7 +31,7 @@ body {
   justify-content: center;
   text-align: center;
   /* font-size: 100%; */
-  color: cornsilk;
+  color: rgb(212, 208, 188);
   /* background-color: crimson; */
   width: 100%;
   padding-bottom: 20px;
@@ -49,7 +49,7 @@ body {
   display: flex;
   flex-direction: row;
   margin: 30px 30px 30px 30px;
-  padding: 40px;
+  padding: 45px;
   justify-content: center;
   text-align: center;
   font-size: 40px;

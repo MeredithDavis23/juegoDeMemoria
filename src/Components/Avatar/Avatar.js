@@ -11,13 +11,7 @@ class Avatar extends React.Component {
         }
     }
 
-    handleClick = (e) => {
-        e.preventdefault();
-        this.setState({
-            avatarPic: e.target.value
-        })
-        window.location.href='/game'
-    }
+ 
 
     componentDidMount() {
         this.makePokemon()
@@ -48,16 +42,24 @@ class Avatar extends React.Component {
         .catch((error) => console.log("parsing error", error));
         }
 
-
+        handleClick = (e, pokeImage) => {
+            console.log(pokeImage)
+        
+            
+            this.setState({
+                   avatarPic: pokeImage
+            })
+            window.location.href='/game'
+        }
         
         randomize() {
             const randomPokemon = Math.floor(Math.random() * 10)
             return this.pokemon[randomPokemon]
         }
     render() {
-        const {pokemonListings, avatarPic} = this.state
+        const {pokemonListings} = this.state
         const pokeList = pokemonListings.map((poke, index) => {
-            return (<PokemonImage  poke={poke} />)
+            return (<PokemonImage handleClick={this.handleClick} poke={poke} />)
         })
         return (
             <div>
