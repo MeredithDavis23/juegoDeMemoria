@@ -75,15 +75,15 @@
 }
 
 .back-button {
-  height: 10%;
+  height: 5%;
   display: inline;
   flex-wrap: wrap;
   margin: 20px;
   padding: 20px;
   justify-content: center;
   text-align: center;
-  font-size: 60%;
-  font-size: 60%;
+  font-size: 40%;
+  /* font-size: 60%; */
   background-image: linear-gradient(
     to right,
     #348f50 0%,

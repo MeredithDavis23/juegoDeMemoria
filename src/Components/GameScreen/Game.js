@@ -4,12 +4,15 @@
 
 
 
-import React, { useState, useEffect } from "react";
+import React, { alert, useState, useEffect } from "react";
 import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
 import './Board.css'
+import 'reactjs-popup/dist/index.css';
+import winMessage from './WinMessage/WinMessage'
+import useMessage from './WinMessage/UseMessage'
 // import PokemonImage from "../Avatar/Pokemon";
-import shuffle from './InitializeDeck'
+// import shuffle from './InitializeDeck'
 
 export default function Game() {
   const [flipped, setFlipped] = useState([]);
@@ -17,6 +20,7 @@ export default function Game() {
   const [dimension, setDimension] = useState(400);
   const [solved, setSolved] = useState([]);
   const [disabled, setDisabled] = useState(false);
+  const [hasWon, setHasWon] = useState(false)
   // const [windowSize, setWindowSize] = useState({
   //   width: undefined, 
   //   height: undefined
@@ -75,10 +79,15 @@ export default function Game() {
         resetCards();
       } else {
         setTimeout(resetCards, 1500);
+      } if (solved.length === 16) {
+        alert.alert("¡Felicidades!")
       }
     }
-    // console.log(flipped)
   };
+
+  const useWinner = () => {
+      setHasWon(true)
+  }
 
   // precache images
   // const preloadImages = () => {
@@ -109,7 +118,7 @@ export default function Game() {
     //match them based on the type ("react", 'vue', etc in this example)
     console.log(flippedCard)
     console.log(clickedCard)
-    if((clickedCard.id === 0 && flippedCard.id === 9) || (flippedCard.id === 9 && clickedCard.id === 0)) {
+    if((clickedCard.id === 0 && flippedCard.id === 9) || (flippedCard.id === 0 && clickedCard.id === 9)) {
       setSolved([...solved, flipped[0], id]);
       resetCards();
     }
@@ -190,9 +199,12 @@ export default function Game() {
         handleClick={handleClick}
         disabled={disabled}
         solved={solved}
+        hasWon={hasWon}
         // windowSize={windowSize}
       />
       </div>
+      <winMessage 
+      hasWon={hasWon} />
     </div>
     </div>
   );
