@@ -107,34 +107,47 @@ export default function Game() {
     //card you flipped first, compare to clicked card
     const flippedCard = cards.find((card) => flipped[0] === card.id);
     //match them based on the type ("react", 'vue', etc in this example)
-    console.log(clickedCard.id)
-    console.log(flippedCard.id)
-    if((clickedCard.id === 0 && flippedCard.id === 8) || (flippedCard.id === 8 && clickedCard.id === 0)) {
-      return flippedCard.type === clickedCard.type
+    console.log(flippedCard)
+    console.log(clickedCard)
+    if((clickedCard.id === 0 && flippedCard.id === 9) || (flippedCard.id === 9 && clickedCard.id === 0)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[1] && flippedCard[9]) || (clickedCard[9] && flippedCard[1])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 1 && flippedCard.id === 10) || (clickedCard.id === 10 && flippedCard.id === 1)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[2] && flippedCard[10]) || (clickedCard[10] && flippedCard[2])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 2 && flippedCard.id === 11) || (clickedCard.id === 11 && flippedCard.id === 2)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[3] && flippedCard[11]) || (clickedCard[11] && flippedCard[3])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 3 && flippedCard.id === 12) || (clickedCard.id === 12 && flippedCard.id === 3)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[4] && flippedCard[12]) || (clickedCard[12] && flippedCard[4])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 4 && flippedCard.id === 13) || (clickedCard.id === 13 && flippedCard.id === 4)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[5] && flippedCard[13]) || (clickedCard[13] && flippedCard[5])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 5 && flippedCard.id === 14) || (clickedCard.id === 14 && flippedCard.id === 5)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    if((clickedCard[6] && flippedCard[14]) || (clickedCard[14] && flippedCard[6])) {
-      return flippedCard.type === clickedCard.type
+    if((clickedCard.id === 6 && flippedCard.id === 15) || (clickedCard.id === 15 && flippedCard.id === 6)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
     }
-    // else((clickedCard[7] && flippedCard[15]) || (clickedCard[15] && flippedCard[7])) {
-    //   return flippedCard.type === clickedCard.type
-    // }
+    if((clickedCard.id === 7 && flippedCard.id === 16) || (clickedCard.id === 16 && flippedCard.id === 7)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
+    }
+    if((clickedCard.id === 8 && flippedCard.id === 17) || (clickedCard.id === 17 && flippedCard.id === 8)) {
+      setSolved([...solved, flipped[0], id]);
+      resetCards();
+    }
     return flippedCard.type === clickedCard.type
   };
+  
 
  //triple for loop 
 //  if(clickedCard[0] && flippedCard[8] || flippedCard[8] && clickedCard[0]) {
