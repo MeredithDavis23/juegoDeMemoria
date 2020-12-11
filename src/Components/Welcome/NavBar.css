@@ -100,6 +100,27 @@ span.emoji {
   /* line-height: 2; */
 }
 
+@media only screen and (max-width: 400px) {
+  span.emoji {
+    font-size: 110%;
+    vertical-align: middle;
+    /* line-height: 2; */
+  }
+  .welcome {
+    font-size: 100%;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .navBar-buttons {
+    padding: 20px;
+    margin: 10px;
+  }
+  .navBar {
+    margin: 10px;
+  }
+}
+
 /* .btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
 .btn-grad {
    margin: 10px;

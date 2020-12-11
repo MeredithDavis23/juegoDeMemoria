@@ -80,14 +80,12 @@ export default function Game() {
       } else {
         setTimeout(resetCards, 1500);
       } if (solved.length === 16) {
+        setHasWon(true)
         alert.alert("¡Felicidades!")
       }
     }
   };
 
-  const useWinner = () => {
-      setHasWon(true)
-  }
 
   // precache images
   // const preloadImages = () => {
@@ -188,6 +186,9 @@ export default function Game() {
                 e.preventDefault();
                 window.location.href='/'}}><span>🡠</span> Regresar</button>
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
+      <button className="exit-button" onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/exit'}}> Salir <span>✖</span></button>
     </div>
     <div className="game-screen">
     {/* <PokemonImage /> */}
@@ -203,8 +204,6 @@ export default function Game() {
         // windowSize={windowSize}
       />
       </div>
-      <winMessage 
-      hasWon={hasWon} />
     </div>
     </div>
   );

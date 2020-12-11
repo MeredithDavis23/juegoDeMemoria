@@ -144,9 +144,86 @@
   text-decoration: none;
 }
 
+.exit-button {
+  height: 5%;
+  display: inline;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  font-size: 40%;
+  background-image: linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  background-image: -webkit-linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  background-image: -moz-linear-gradient(
+    to right,
+    #348f50 0%,
+    #56b4d3 51%,
+    #348f50 100%
+  );
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px 2px;
+}
+
+.exit-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
 span {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .game-header {
+    font-size: 100%;
+  }
+  .exit-button {
+    font-size: 30%;
+    margin: 10px;
+    padding: 10px;
+  }
+  .reset-button {
+    font-size: 30%;
+    margin: 10px;
+    padding: 10px;
+  }
+  .back-button {
+    font-size: 30%;
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .game-header {
+    font-size: 90%;
+  }
+  .exit-button {
+    font-size: 20%;
+  }
+  .reset-button {
+    font-size: 20%;
+  }
+  .back-button {
+    font-size: 20%;
+  }
 }
 
 /* .avatar {
