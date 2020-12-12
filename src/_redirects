@@ -1,0 +1,4 @@
+/         /Components/Welcome/NavBar
+/avatar  /Components/Avatar/Avatar
+/exit    /Components/Welcome/ExitPopup
+/game    /Components/GameScreen/Game

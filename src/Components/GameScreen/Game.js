@@ -3,6 +3,7 @@ import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
 import './Board.css'
 import 'reactjs-popup/dist/index.css';
+import { useHistory } from "react-router";
 
 
 // https://5fd3d8790bdcbe51a0344930--spanish-poke-game.netlify.app/exit
@@ -134,8 +135,8 @@ export default function Game(props) {
                 window.location.href='/'}}><span>🡠</span> Regresar</button>
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
       <button className="exit-button" onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/exit'}}> Salir <span>✖</span></button>
+               
+               useHistory.push(`/game`);}}> Salir <span>✖</span></button>
     </div>
     <div className="game-screen">
     {/* <PokemonImage /> */}

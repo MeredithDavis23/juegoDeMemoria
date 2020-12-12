@@ -1,6 +1,8 @@
 import React from 'react';
 import './Avatar.css'
 import PokemonImage from './PokemonImage'
+import useHistory from 'react-router-dom'
+
 class Avatar extends React.Component {
     constructor(props) {
         super(props);
@@ -41,9 +43,10 @@ class Avatar extends React.Component {
         .catch((error) => console.log("parsing error", error));
         }
 
-        // handleClick = (e, pokeImage) => {
-        //     window.location.href='/game'
-        // }
+        handleClick = (e, pokeImage) => {
+            const history = useHistory();
+            history.push(`/game`);
+        }
 
         useEffect() {
             this.setState({
@@ -58,7 +61,7 @@ class Avatar extends React.Component {
     render() {
         const {pokemonListings} = this.state
         const pokeList = pokemonListings.map((poke, index) => {
-            return (<PokemonImage href="/game"  poke={poke} />)
+            return (<PokemonImage to="/game" handleClick={this.handleClick}  poke={poke} />)
         })
         return (
             <div>
