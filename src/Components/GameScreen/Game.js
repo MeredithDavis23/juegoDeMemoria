@@ -1,14 +1,15 @@
 import React, { alert, useState, useEffect } from "react";
 import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
+import Route from 'react-router'
+import ExitPopUp from '../Welcome/ExitPopup'
 import './Board.css'
 import 'reactjs-popup/dist/index.css';
-import { useHistory } from "react-router";
 
 
 // https://5fd3d8790bdcbe51a0344930--spanish-poke-game.netlify.app/exit
 
-export default function Game(props) {
+function Game(props) {
   const [flipped, setFlipped] = useState([]);
   const [cards, setCards] = useState([]);
   const [dimension, setDimension] = useState(400);
@@ -125,6 +126,10 @@ export default function Game(props) {
     );
   };
 
+  const Exit = () => {
+    window.location.href="/exit"
+  }
+
   return (
     <div>
       <h1 className="game-header">¡Que Comience el Juego!</h1> 
@@ -134,9 +139,7 @@ export default function Game(props) {
                 e.preventDefault();
                 window.location.href='/'}}><span>🡠</span> Regresar</button>
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
-      <button className="exit-button" onClick={(e) => {
-               
-               useHistory.push(`/game`);}}> Salir <span>✖</span></button>
+      <button className="exit-button" onClick={Exit}> Salir <span>✖</span></button>
     </div>
     <div className="game-screen">
     {/* <PokemonImage /> */}
@@ -156,3 +159,5 @@ export default function Game(props) {
     </div>
   );
 }
+
+export default Game

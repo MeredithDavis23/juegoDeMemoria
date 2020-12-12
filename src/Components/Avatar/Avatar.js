@@ -1,7 +1,8 @@
 import React from 'react';
 import './Avatar.css'
 import PokemonImage from './PokemonImage'
-import useHistory from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Game from '../GameScreen/Game'
 
 class Avatar extends React.Component {
     constructor(props) {
@@ -44,8 +45,7 @@ class Avatar extends React.Component {
         }
 
         handleClick = (e, pokeImage) => {
-            const history = useHistory();
-            history.push(`/game`);
+           return <Route component={Game} path="game" />
         }
 
         useEffect() {
@@ -61,7 +61,7 @@ class Avatar extends React.Component {
     render() {
         const {pokemonListings} = this.state
         const pokeList = pokemonListings.map((poke, index) => {
-            return (<PokemonImage to="/game" handleClick={this.handleClick}  poke={poke} />)
+            return (<PokemonImage handleClick={this.handleClick}  poke={poke} />)
         })
         return (
             <div>
