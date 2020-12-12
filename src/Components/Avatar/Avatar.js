@@ -1,13 +1,12 @@
 import React from 'react';
 import './Avatar.css'
-import PokemonImage from './Pokemon'
+import PokemonImage from './PokemonImage'
 class Avatar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             pokemon: [], 
             pokemonListings: [], 
-            avatarPic: ''
         }
     }
 
@@ -43,13 +42,19 @@ class Avatar extends React.Component {
         }
 
         handleClick = (e, pokeImage) => {
-            console.log(pokeImage)
+            // console.log(pokeImage)
         
             
-            this.setState({
-                   avatarPic: pokeImage
-            })
+            // this.setState({
+            //        avatarPic: pokeImage
+            // })
             window.location.href='/game'
+        }
+
+        useEffect() {
+            this.setState({
+                avatarPic: this.state.pokeList.id
+            })
         }
         
         randomize() {
@@ -69,7 +74,7 @@ class Avatar extends React.Component {
                 window.location.href='/'}}><span>⮨</span> Regresar</button>
             <div className="avatars" >
             <div className="pokemon">
-               {pokeList}
+               {pokeList} {console.log(pokeList)}
             </div>
         </div>
         </div>

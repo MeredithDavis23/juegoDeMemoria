@@ -27,6 +27,11 @@
   /* width: 100%; */
 }
 
+.avatar {
+  height: 10%;
+  width: 10%;
+}
+
 .memory-game {
   padding-top: 0;
   width: 99.6%;

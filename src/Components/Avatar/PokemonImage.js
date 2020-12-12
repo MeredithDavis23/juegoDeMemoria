@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './Avatar.css'
 
 const PokemonImage = ({poke, handleClick}) => {
-    useEffect(() => {console.log(poke)})
+    // useEffect(() => {console.log(poke)})
     return (
         <div>
             <img src={poke.sprites['front_default']} onClick={(e) => {
