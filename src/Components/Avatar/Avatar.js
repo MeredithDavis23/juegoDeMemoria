@@ -1,8 +1,6 @@
 import React from 'react';
 import './Avatar.css'
 import PokemonImage from './PokemonImage'
-import { Route } from 'react-router-dom'
-import Game from '../GameScreen/Game'
 
 class Avatar extends React.Component {
     constructor(props) {
@@ -45,7 +43,18 @@ class Avatar extends React.Component {
         }
 
         handleClick = (e, pokeImage) => {
-           return <Route component={Game} path="game" />
+            console.log('hello')
+           return this.props.history.push({
+            pathname: "/game",
+            state: {image: pokeImage}
+            })
+        }
+
+        handleBack = (e) => {
+            e.preventDefault();
+            return this.props.history.push({
+            pathname: "/",
+            })
         }
 
         useEffect() {
@@ -66,12 +75,10 @@ class Avatar extends React.Component {
         return (
             <div>
             <h1 className="escoge">¡Escoge tu avatar!</h1>
-            <button className="back-button" onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/'}}><span>⮨</span> Regresar</button>
+            <button className="back-button" onClick={this.handleBack}><span>⮨</span> Regresar</button>
             <div className="avatars" >
             <div className="pokemon">
-               {pokeList} {console.log(pokeList)}
+               {pokeList}
             </div>
         </div>
         </div>

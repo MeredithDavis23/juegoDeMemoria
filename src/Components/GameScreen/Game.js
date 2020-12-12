@@ -1,10 +1,12 @@
-import React, { alert, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import BoardPractice from "./Deck";
 import initializeDeck from "./InitializeDeck";
-import Route from 'react-router'
-import ExitPopUp from '../Welcome/ExitPopup'
+// import Route from 'react-router'
+// import ExitPopUp from '../Welcome/ExitPopup'
 import './Board.css'
 import 'reactjs-popup/dist/index.css';
+// import Avatar from '../Avatar/Avatar'
+import {useHistory} from 'react-router-dom'
 
 
 // https://5fd3d8790bdcbe51a0344930--spanish-poke-game.netlify.app/exit
@@ -16,10 +18,12 @@ function Game(props) {
   const [solved, setSolved] = useState([]);
   const [disabled, setDisabled] = useState(false);
   const [hasWon, setHasWon] = useState(false)
+  const history = useHistory();
 
 
 
   useEffect(() => {
+    console.log(props)
     resizeBoard();
     setCards(initializeDeck());
   }, []);
@@ -51,7 +55,7 @@ function Game(props) {
         setTimeout(resetCards, 1500);
       } if (solved.length === 16) {
         setHasWon(true)
-        alert.alert("¡Felicidades!")
+        window.alert("¡Felicidades!")
       }
     }
   };
@@ -130,16 +134,32 @@ function Game(props) {
     window.location.href="/exit"
   }
 
+
+
+  const handleBack = (e) => {
+       e.preventDefault()
+       history.push({
+          pathname:  "/",
+       })
+  }
+
+
+  const handleExit = (e) => {
+    e.preventDefault()
+    history.push({
+       pathname:  "/exit",
+    })
+}
+
   return (
     <div>
       <h1 className="game-header">¡Que Comience el Juego!</h1> 
       <div className="game-buttons">
-    <img className="avatar" alt="" handleClick={handleClick} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" ></img>
-    <button className="back-button" onClick={(e) => {
-                e.preventDefault();
-                window.location.href='/'}}><span>🡠</span> Regresar</button>
+    {/* <img className="avatar" alt="" handleClick={handleClick} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" ></img> */}
+    <img className="avatar" alt="" handleClick={handleClick} src={props.location.state.image} ></img>
+    <button className="back-button" onClick={handleBack}><span>🡠</span> Regresar</button>
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
-      <button className="exit-button" onClick={Exit}> Salir <span>✖</span></button>
+      <button className="exit-button" onClick={handleExit}> Salir <span>✖</span></button>
     </div>
     <div className="game-screen">
     {/* <PokemonImage /> */}

@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import './NavBar.css';
 import {Link} from 'react-router-dom'
+import Login from '../Login/Login'
+// import '../Login/Login.css'
 // import Modal from './ExitPopup'
 // import Popup from 'reactjs-popup'
 // import {HiOutlineEmojiHappy} from "react-icons"
@@ -8,6 +10,7 @@ import {Link} from 'react-router-dom'
 
 
 export default function NavBar(props) {
+  // const loggedIn = useState(false)
   console.log(props);
   // const handleToggle = () => {
   //   props.setToggle(!props.toggled);
@@ -24,23 +27,25 @@ export default function NavBar(props) {
 
 
   return (
+    <div>
+    <Login />
     <div className="navBar-buttons">
       <button className="navBar">
       <ul>
         <span role="img" className="emoji" aria-label="Choose an Avatar">
-          🧍
+        😃 
         </span>{" "}
-          <Link to="/avatar" className='link'>Escoge un avatar</Link>
+          <Link to="/avatar" className='link'>Escoge un Avatar para Jugar</Link>
       </ul>
       </button>
-      <button className="navBar">
+      {/* <button className="navBar">
       <ul>
         <span role="img" className="emoji" aria-label="Play Game">
         😃 
         </span>{" "}
           <Link to="/game" className='link'>A Jugar</Link>
       </ul>
-      </button>
+      </button> */}
       <button className="navBar">
         <ul>
           <span role="img" className="emoji" aria-label="Exit">
@@ -50,39 +55,7 @@ export default function NavBar(props) {
         </ul>
       </button>
     </div>
-    // <div className="navBar">
-    //   <div className="dropdown">
-    //     <div className="buttonDiv">
-    //       <button className="button" onClick={handleToggle}>
-    //         <span className="button--middle" />
-    //         <div className="dropdown-content">
-    //           {props.toggled && (
-    //             <ul className="ul">
-    //               <li>
-    //                 <span role="img" aria-label="Choose an Avatar">
-    //                 🧍
-    //                 </span>{" "}
-    //                 <Link to="/avatar" className='link'>Escoge un avatar</Link>
-    //               </li>
-    //               <li>
-    //                 <span role="img" aria-label="Play Game">
-    //                 😃
-    //                 </span>{" "}
-    //                 <Link to="/game" className='link'>Jugar</Link>
-    //               </li>
-    //               <li>
-    //                 <span role="img" aria-label="Exit">
-    //                 ❌
-    //                 </span>{" "}
-    //                 <Link to="/exit" className='link'>Salir</Link>
-    //               </li>
-    //             </ul>
-    //           )}
-    //         </div>
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>
-  );
+    </div>
+  )
 }
 
