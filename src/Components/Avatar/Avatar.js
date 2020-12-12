@@ -41,9 +41,9 @@ class Avatar extends React.Component {
         .catch((error) => console.log("parsing error", error));
         }
 
-        handleClick = (e, pokeImage) => {
-            window.location.href='/game'
-        }
+        // handleClick = (e, pokeImage) => {
+        //     window.location.href='/game'
+        // }
 
         useEffect() {
             this.setState({
@@ -58,7 +58,7 @@ class Avatar extends React.Component {
     render() {
         const {pokemonListings} = this.state
         const pokeList = pokemonListings.map((poke, index) => {
-            return (<PokemonImage handleClick={this.handleClick} poke={poke} />)
+            return (<PokemonImage href="/game"  poke={poke} />)
         })
         return (
             <div>
