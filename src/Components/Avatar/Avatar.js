@@ -42,12 +42,6 @@ class Avatar extends React.Component {
         }
 
         handleClick = (e, pokeImage) => {
-            // console.log(pokeImage)
-        
-            
-            // this.setState({
-            //        avatarPic: pokeImage
-            // })
             window.location.href='/game'
         }
 
