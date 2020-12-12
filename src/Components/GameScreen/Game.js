@@ -135,7 +135,7 @@ export default function Game(props) {
       <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
       <button className="exit-button" onClick={(e) => {
                 e.preventDefault();
-                window.location.href='https://5fd423662427adb386e56e58--spanish-poke-game.netlify.app'}}> Salir <span>✖</span></button>
+                window.location.href='/exit'}}> Salir <span>✖</span></button>
     </div>
     <div className="game-screen">
     {/* <PokemonImage /> */}
