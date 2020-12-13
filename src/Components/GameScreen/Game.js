@@ -145,6 +145,11 @@ function Game(props) {
     })
 }
 
+// const addDefaultSrc = (ev) => {
+//   ev.target.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+// } 
+// onError={addDefaultSrc}
+
 return (
   <div>
     <h1 className="game-header">¡Que Comience el Juego!</h1> 

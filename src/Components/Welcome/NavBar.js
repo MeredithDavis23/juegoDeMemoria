@@ -25,6 +25,12 @@ export default function NavBar(props) {
 //     })
 //   }
 
+// const handleClick = () => {
+//  return this.props.history.push({
+//   state: {image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"}
+//   })
+// }
+
 
   return (
     <div>
@@ -38,7 +44,7 @@ export default function NavBar(props) {
           <Link to="/avatar" className='link'>Escoge un Avatar para Jugar</Link>
       </ul>
       </button>
-      {/* <button className="navBar">
+      {/* <button onClick={handleClick} className="navBar">
       <ul>
         <span role="img" className="emoji" aria-label="Play Game">
         😃 

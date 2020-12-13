@@ -2,7 +2,6 @@ import React from 'react';
 import './Avatar.css'
 
 const PokemonImage = ({poke, handleClick}) => {
-    // useEffect(() => {console.log(poke)})
     return (
         <div>
             <img src={poke.sprites['front_default']} onClick={(e) => {
@@ -15,7 +14,3 @@ const PokemonImage = ({poke, handleClick}) => {
 }
 
 export default PokemonImage
-
-// onClick={(e) => {
-//     e.preventDefault();
-//     window.location.href='/game'}}
