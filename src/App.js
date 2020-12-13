@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import Welcome from '../src/Components/Welcome/Welcome'
-import Login from './Components/Login/Login'
+// import Login from './Components/Login/Login'
 // import {Button, TextField} from '@material-ui/core'
-import { BrowserRouter } from 'react-router-dom';
-import Router from "./Router";
-import { bool } from 'prop-types';
+// import { BrowserRouter } from 'react-router-dom';
+// import Router from "./Router";
+// import { bool } from 'prop-types';
 // import Login from './Components/Login/Login'
 
 
@@ -15,7 +15,7 @@ class App extends Component {
     super(props) 
       this.state = {
         // exit: false, 
-        showLogin: true,
+        // showLogin: true,
         // loggedIn: false, 
         name: '', 
       }

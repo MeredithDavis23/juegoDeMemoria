@@ -25,6 +25,7 @@ class Avatar extends React.Component {
             if(data) {
                 this.setState({
                 pokemon: data.results}, () => {
+                    // eslint-disable-next-line array-callback-return
                     this.state.pokemon.map(pokemon => {
                         fetch(pokemon.url)
                         .then(response => response.json())
