@@ -19,12 +19,14 @@ export default Login
 
 
 // class Login extends React.Component {
-//     state = {};
-
+//     state = {
+//         showLogin: true, 
+//         name: ''
+//     };
 //     handleChange = (e) => {
 //         this.setState({ name: e.target.value})
 //     }
-
+  
 //     handleClick = (e) => {
 //         e.preventDefault();
 //         this.setState({
@@ -32,13 +34,25 @@ export default Login
 //         })
 //       };
 
+//     handleChange = (e) => {
+//         this.setState({ name: e.target.value})
+//     }
+
+//     // handleClick = (e) => {
+//     //     e.preventDefault();
+//     //     this.setState({
+//     //       showLogin: false
+//     //     })
+//     // //   this.props.name(this.state.name, false);
+//     //   };
+
 // render() {
 //     return (
 //         <div className="wrapper">
 //             <div className="login">
 //                 <form>
 //                     <div className="username">
-//                         <label>Username</label>
+//                         <label>Name</label>
 //                         <input
 //                         type="name" 
 //                         id="username" 

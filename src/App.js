@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import Welcome from '../src/Components/Welcome/Welcome'
-// import Login from './Components/Login/Login'
+import Login from './Components/Login/Login'
 // import {Button, TextField} from '@material-ui/core'
 import { BrowserRouter } from 'react-router-dom';
 import Router from "./Router";
+import { bool } from 'prop-types';
 // import Login from './Components/Login/Login'
 
 
@@ -13,18 +14,14 @@ class App extends Component {
   constructor(props) {
     super(props) 
       this.state = {
-        exit: false, 
+        // exit: false, 
         showLogin: true,
-        loggedIn: false, 
+        // loggedIn: false, 
         name: '', 
       }
     }
+   
 
-  //   addAvatar = (e) => {
-  //     e.preventDefault();
-  //     this.props.avatar(this.state.avatar)
-  //     console.log("add")
-  // }
 
   // handleClick = () => {
   //   this.setState({
@@ -32,28 +29,53 @@ class App extends Component {
   //   });
   //   this.handleClick.bind(this);
   // };
-
-  // handleLogin = (name, boolean) => {
-  //   this.setState({name: name, showLogin: boolean})
-  // }
+  handleLogin = (name, boolean) => {
+    this.setState({name: name, showLogin: boolean})
+  }
 
   render() {
-    // const {showLogin, name} = this.state
+    const {showLogin, name} = this.state;
     return (
       <div className="App">
-    {/* {showLogin ? <Login name={this.handleLogin} /> : null} */}
-    <BrowserRouter>
-      <Welcome />
-      <Router />
-  </BrowserRouter>
+        {/* {showLogin ? 
+        <Login name={this.handleLogin} /> : null} */}
+        <Welcome name={name} />
       </div>
-    );
+      // this.state.showLogin ? (
+    // ) : (
+    //   <div>
+    //     <div className="wrapper">
+    //         <div className="login">
+    //             <form>
+    //                 <div className="username">
+    //                     <label>Username</label>
+    //                     <input
+    //                     type="name" 
+    //                     id="username" 
+    //                     name="username" 
+    //                     placeholder="Username"
+    //                     onChange={this.handleChange}
+    //                     />
+    //                 </div>
+    //                 <button onClick={this.handleClick}>
+    //                     Submit
+    //                 </button>
+    //             </form>
+    //         </div>
+    //     </div>
+    //   </div>
+    )
   }
   }
 export default App;
 
-
-
+// eslint-disable-next-line
+    {/* {showLogin ? <Login name={this.handleLogin} /> : null} */}
+    // eslint-disable-next-line
+    {/* <BrowserRouter>
+      <Welcome />
+      <Router />
+  </BrowserRouter> */}
 
 // return this.state.loggedIn ? (
 //   <div className="App">

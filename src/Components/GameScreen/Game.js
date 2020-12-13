@@ -23,7 +23,7 @@ function Game(props) {
 
 
   useEffect(() => {
-    console.log(props)
+    // console.log(props)
     resizeBoard();
     setCards(initializeDeck());
   }, []);
@@ -130,12 +130,6 @@ function Game(props) {
     );
   };
 
-  const Exit = () => {
-    window.location.href="/exit"
-  }
-
-
-
   const handleBack = (e) => {
        e.preventDefault()
        history.push({
@@ -151,33 +145,32 @@ function Game(props) {
     })
 }
 
-  return (
-    <div>
-      <h1 className="game-header">¡Que Comience el Juego!</h1> 
-      <div className="game-buttons">
-    {/* <img className="avatar" alt="" handleClick={handleClick} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" ></img> */}
-    <img className="avatar" alt="" handleClick={handleClick} src={props.location.state.image} ></img>
-    <button className="back-button" onClick={handleBack}><span>🡠</span> Regresar</button>
-      <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
-      <button className="exit-button" onClick={handleExit}> Salir <span>✖</span></button>
+return (
+  <div>
+    <h1 className="game-header">¡Que Comience el Juego!</h1> 
+    <div className="game-buttons">
+  {/* <img className="avatar" alt="" handleClick={handleClick} src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" ></img> */}
+  <img className="avatar" alt="" handleClick={handleClick} src={props.location.state.image} ></img>
+  <button className="back-button" onClick={handleBack}><span>🡠</span> Regresar</button>
+    <button className="reset-button" onClick={resetBoard}>Reiniciar <span>⟲</span></button>
+    <button className="exit-button" onClick={handleExit}> Salir <span>✖</span></button>
+  </div>
+  <div className="game-screen">
+  {/* <PokemonImage /> */}
+  <div className="memory-game">
+    <BoardPractice
+      dimension={dimension}
+      cards={cards}
+      flipped={flipped}
+      handleClick={handleClick}
+      disabled={disabled}
+      solved={solved}
+      hasWon={hasWon}
+      // windowSize={windowSize}
+    />
     </div>
-    <div className="game-screen">
-    {/* <PokemonImage /> */}
-    <div className="memory-game">
-      <BoardPractice
-        dimension={dimension}
-        cards={cards}
-        flipped={flipped}
-        handleClick={handleClick}
-        disabled={disabled}
-        solved={solved}
-        hasWon={hasWon}
-        // windowSize={windowSize}
-      />
-      </div>
-    </div>
-    </div>
-  );
+  </div>
+  </div>
+);
 }
-
 export default Game
