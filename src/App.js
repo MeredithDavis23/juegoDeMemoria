@@ -15,7 +15,7 @@ class App extends Component {
     super(props) 
       this.state = {
         // exit: false, 
-        // showLogin: true,
+        showLogin: true,
         // loggedIn: false, 
         name: '', 
       }
@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   render() {
-    const {showLogin, name} = this.state;
+    const { name} = this.state;
     return (
       <div className="App">
         {/* {showLogin ? 
