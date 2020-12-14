@@ -1,12 +1,45 @@
 import React from 'react';
 
 const Login = () => {
-    return (
-        <div></div>
-    )
+   return ( 
+   <div></div>
+   )
 }
+ export default Login
+// class Login extends React.Component {
+//     state = {
+//         loggedIn: false
+//     }
 
-export default Login
+//     handleClick = () => {
+//         this.setState({
+//           loggedIn: !this.state.loggedIn,
+//         });
+//         this.handleClick.bind(this);
+//       };
+
+//     render() {
+//         return (
+//             <div className="login">
+//           <form className="login-form" onSubmit={this.handleClick}>
+//         <div className="firstname">
+//           <label for="username">User Name  </label>
+//             <input type="text" id="fname" name="username" placeholder="Username" />
+//             </div>
+//           <div className="lastname">
+//            <label for="lname">Last Name  </label>
+//                <input type="password" id="password" name="password" placeholder="Password" />
+//            </div>
+//             <div className="submit-button">
+//             <input type="submit" id="submit" value="Submit" />
+//            </div>
+//          </form>
+//          </div>
+//         )
+//     }
+// }
+
+// export default Login
 
 
 
@@ -15,36 +48,34 @@ export default Login
 // import Button from "@material-ui/core/Button";
 // import TextField from "@material-ui/core/TextField";
 // import './Login.css'
-// import { render } from '@testing-library/react';
 
 
 // class Login extends React.Component {
-//     state = {
-//         showLogin: true, 
-//         name: ''
-//     };
+//     state = {};
 //     handleChange = (e) => {
 //         this.setState({ name: e.target.value})
 //     }
   
-//     handleClick = (e) => {
-//         e.preventDefault();
-//         this.setState({
-//             showLogin: false
-//         })
-//       };
-
-//     handleChange = (e) => {
-//         this.setState({ name: e.target.value})
-//     }
-
 //     // handleClick = (e) => {
 //     //     e.preventDefault();
 //     //     this.setState({
-//     //       showLogin: false
+//     //         showLogin: false
 //     //     })
-//     // //   this.props.name(this.state.name, false);
 //     //   };
+
+//     // handleChange = (e) => {
+//     //     this.setState({ name: e.target.value})
+//     // }
+
+//     handleClick = (e) => {
+//         e.preventDefault();
+//         console.log("hello")
+//     //   this.props.name(this.state.name, false);
+//       this.setState({
+//           showLogin: false
+//       })
+//       this.handleClick.bind(this)
+//       };
 
 // render() {
 //     return (

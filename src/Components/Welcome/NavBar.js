@@ -1,14 +1,10 @@
-import React, { useEffect} from "react";
+import React, {useEffect} from "react";
 import './NavBar.css';
 import {Link} from 'react-router-dom'
-import Login from '../Login/Login'
+import Login from './Login'
 // import '../Login/Login.css'
 // import Modal from './ExitPopup'
 // import Popup from 'reactjs-popup'
-// import {HiOutlineEmojiHappy} from "react-icons"
-
-
-
 export default function NavBar(props) {
   // const loggedIn = useState(false)
   console.log(props);
@@ -64,4 +60,3 @@ export default function NavBar(props) {
     </div>
   )
 }
-
