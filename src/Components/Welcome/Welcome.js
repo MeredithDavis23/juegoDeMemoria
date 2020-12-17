@@ -2,6 +2,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import './NavBar.css'
+// import './Login.css'
 
 class Welcome extends React.Component {
 
